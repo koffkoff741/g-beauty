@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G Beauty Genève | Institut de Beauté Premium à Vernier</title>
+<meta name="description" content="G Beauty Genève — Institut de beauté haut de gamme à Vernier. Épilation laser, lipocavitation, cryolipolysie, soins visage, détätouage & carbon peel. Réservez en ligne.">
+<meta name="keywords" content="institut de beauté Genève, épilation laser Vernier, lipocavitation Genève">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gbeautygeneve.ch">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #fafafa;
+    --grey-light: #f2f2f0;
+    --grey-mid: #c8c8c4;
+    --grey-dark: #3a3a38;
+    --accent: #1a1a1a;
+    --gold: #b8985a;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', sans-serif;
+    --transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 4rem;
+    background: rgba(250,250,250,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    transition: all 0.4s;
+  }
+  nav.scrolled { padding: 0.9rem 4rem; }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--black);
+    text-decoration: none;
+  }
+  .nav-logo span { font-style: italic; font-weight: 300; }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+  }
+  .nav-links a:hover { opacity: 0.4; }
+  .nav-cta {
+    background: var(--black);
+    color: var(--white) !important;
+    padding: 0.65rem 1.6rem !important;
+    letter-spacing: 0.16em !important;
+  }
+  .nav-cta:hover { opacity: 0.75 !important; }
+
+  /* REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+  .reveal-delay-4 { transition-delay: 0.6s; }
+
+  /* ============ SECTION 1: HERO ============ */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    padding-top: 80px;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 5rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--grey-dark);
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--grey-dark);
+    vertical-align: middle;
+    margin-right: 1rem;
+  }
+  h1.hero-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.08;
+    margin-bottom: 1.5rem;
+    color: var(--black);
+  }
+  h1.hero-h1 em {
+    font-style: italic;
+    font-weight: 300;
+  }
+  h2.hero-h2 {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--grey-dark);
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+    max-width: 380px;
+    margin-bottom: 3rem;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 1.1rem 2.8rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: var(--font-body);
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--white);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    mix-blend-mode: difference;
+  }
+  .btn-primary:hover::after { transform: scaleX(1); transform-origin: left; }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 2px;
+    transition: opacity 0.3s;
+  }
+  .btn-secondary:hover { opacity: 0.5; }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-tag {
+    position: absolute;
+    bottom: 3rem;
+    left: 2rem;
+    background: rgba(250,250,250,0.92);
+    backdrop-filter: blur(8px);
+    padding: 1.2rem 1.8rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-left: 2px solid var(--black);
+  }
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey-dark);
+    z-index: 3;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: var(--grey-mid);
+    position: relative;
+    overflow: hidden;
+  }
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--black);
+    animation: scrollDown 1.8s ease infinite;
+  }
+  @keyframes scrollDown { to { top: 200%; } }
+
+  /* ============ SECTION 2: IMPACT / DOULEURS ============ */
+  #impact {
+    padding: 8rem 5rem;
+    background: var(--black);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .impact-left h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+  }
+  .impact-left h2 em { font-style: italic; }
+  .impact-left p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.9;
+    max-width: 400px;
+  }
+  .impact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .pain-point {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .pain-point:last-child { border-bottom: none; padding-bottom: 0; }
+  .pain-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.12);
+    line-height: 1;
+  }
+  .pain-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    font-style: italic;
+  }
+  .pain-content p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.8;
+  }
+
+  /* ============ SECTION 3: MÉTHODOLOGIE ============ */
+  #methodologie {
+    padding: 8rem 5rem;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .method-header {
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+  .section-tag {
+    font-size: 0.63rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--grey-dark);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  .method-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  .method-header h2 em { font-style: italic; }
+  .method-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .method-step {
+    padding: 3.5rem 3rem;
+    border-right: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+  }
+  .method-step:last-child { border-right: none; }
+  .method-step-num {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 300;
+    color: rgba(0,0,0,0.05);
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    line-height: 1;
+  }
+  .method-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 1.8rem;
+  }
+  .method-step h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  .method-step p {
+    font-size: 0.8rem;
+    color: var(--grey-dark);
+    line-height: 1.85;
+  }
+  .method-band {
+    margin-top: 5rem;
+    padding: 3rem 4rem;
+    background: var(--grey-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  .method-band p {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    max-width: 600px;
+  }
+
+  /* ============ SECTION 4: PRESTATIONS ============ */
+  #prestations {
+    padding: 8rem 5rem;
+    background: var(--grey-light);
+  }
+  .prestations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 5rem;
+  }
+  .prestations-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  .prestations-header h2 em { font-style: italic; }
+  .prestations-header p {
+    max-width: 340px;
+    font-size: 0.82rem;
+    color: var(--grey-dark);
+    line-height: 1.8;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .service-card {
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+
+  }
+  .service-card .img-portfolio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s;
+    filter: grayscale(20%) brightness(0.88);
+  }
+  .service-card:hover .img-portfolio {
+    transform: scale(1.08);
+    filter: grayscale(5%) brightness(0.78);
+  }
+  .service-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 55%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+  }
+  .service-num {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.5rem;
+  }
+  .service-name {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--white);
+    font-style: italic;
+    margin-bottom: 0.6rem;
+  }
+  .service-desc {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s;
+    opacity: 0;
+  }
+  .service-card:hover .service-desc { max-height: 80px; opacity: 1; }
+  .service-arrow {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.4s, transform 0.4s;
+    font-family: var(--font-body);
+  }
+  .service-card:hover .service-arrow { opacity: 1; transform: translateY(0); }
+
+  /* ============ SECTION 5+6: PREUVE SOCIALE & ABOUT ============ */
+  #preuves {
+    padding: 8rem 5rem;
+    background: var(--white);
+  }
+  .preuves-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .preuves-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 300;
+    font-style: italic;
+  }
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--black);
+    letter-spacing: 4px;
+  }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+  .review-card {
+    padding: 2.8rem 2.5rem;
+    background: var(--grey-light);
+    position: relative;
+  }
+  .review-card::before {
+    content: '"';
+    font-family: var(--font-display);
+    font-size: 6rem;
+    color: rgba(0,0,0,0.06);
+    position: absolute;
+    top: 0.5rem;
+    left: 1.5rem;
+    line-height: 1;
+  }
+  .review-text {
+    font-size: 0.84rem;
+    line-height: 1.85;
+    color: var(--grey-dark);
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-family: var(--font-display);
+    font-size: 1rem;
+  }
+  .review-author {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .review-source {
+    font-size: 0.65rem;
+    color: var(--grey-mid);
+    letter-spacing: 0.08em;
+  }
+  .preuves-photo-band {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2px;
+    height: 420px;
+  }
+  .proof-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: filter 0.5s;
+  }
+  .proof-img:hover { filter: grayscale(0%); }
+
+  /* ============ SECTION 7: ABOUT ============ */
+  #about {
+    padding: 8rem 5rem;
+    background: var(--black);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .about-image-wrap {
+    position: relative;
+  }
+  .img-about {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    filter: grayscale(15%);
+  }
+  .about-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    width: 130px;
+    height: 130px;
+    background: var(--white);
+    color: var(--black);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .about-badge strong {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 300;
+    display: block;
+    line-height: 1;
+  }
+  .about-badge span {
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--grey-dark);
+  }
+  .about-content .section-tag { color: rgba(255,255,255,0.4); }
+  .about-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+  }
+  .about-content h2 em { font-style: italic; }
+  .about-content p {
+    font-size: 0.84rem;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+  }
+  .about-serment {
+    padding: 2rem 0 2rem 2rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+    margin: 2rem 0;
+  }
+  .about-serment p {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255,255,255,0.85) !important;
+    margin: 0;
+  }
+  .about-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  .stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+  .stat span {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .about-ig {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 2.5rem;
+    padding: 1rem 2rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.4s;
+  }
+  .about-ig:hover { background: var(--white); color: var(--black); }
+
+  /* ============ SECTION 8: FAQ ============ */
+  #faq {
+    padding: 8rem 5rem;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .faq-left h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    position: sticky;
+    top: 120px;
+  }
+  .faq-left h2 em { font-style: italic; }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 2rem 0;
+  }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .faq-q h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .faq-toggle {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--grey-mid);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+    transition: all 0.3s;
+    color: var(--grey-dark);
+  }
+  .faq-item.open .faq-toggle {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+    transform: rotate(45deg);
+  }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.4s;
+    opacity: 0;
+  }
+  .faq-item.open .faq-a { max-height: 300px; opacity: 1; }
+  .faq-a p {
+    padding-top: 1.2rem;
+    font-size: 0.83rem;
+    color: var(--grey-dark);
+    line-height: 1.85;
+  }
+
+  /* ============ SECTION 9: FINAL CTA ============ */
+  #final-cta {
+    padding: 10rem 5rem;
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-bg-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: clamp(8rem, 18vw, 20rem);
+    font-weight: 300;
+    color: rgba(255,255,255,0.03);
+    pointer-events: none;
+    white-space: nowrap;
+    letter-spacing: -0.02em;
+  }
+  #final-cta .section-tag { color: rgba(255,255,255,0.35); }
+  #final-cta h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 6rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  #final-cta h2 em { font-style: italic; }
+  #final-cta p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.55);
+    max-width: 480px;
+    margin: 0 auto 3.5rem;
+    line-height: 1.85;
+  }
+  .cta-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .btn-white {
+    display: inline-block;
+    background: var(--white);
+    color: var(--black);
+    padding: 1.2rem 3rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: var(--font-body);
+    transition: all 0.4s;
+  }
+  .btn-white:hover { background: transparent; color: var(--white); outline: 1px solid var(--white); }
+  .btn-outline-white {
+    display: inline-block;
+    background: transparent;
+    color: var(--white);
+    padding: 1.2rem 3rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: var(--font-body);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.4s;
+  }
+  .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
+  .cta-phone {
+    display: block;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.35);
+  }
+  .cta-phone a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.3s; }
+  .cta-phone a:hover { color: var(--white); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: #060606;
+    color: rgba(255,255,255,0.5);
+    padding: 5rem 5rem 3rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 4rem;
+  }
+  .footer-brand .nav-logo {
+    display: block;
+    font-size: 1.6rem;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+  }
+  .footer-brand p {
+    font-size: 0.78rem;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+  }
+  .footer-brand address {
+    font-style: normal;
+    font-size: 0.75rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.35);
+  }
+  footer h4 {
+    font-size: 0.63rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  footer ul a {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  footer ul a:hover { color: var(--white); }
+  .footer-map {
+    border-radius: 0;
+    overflow: hidden;
+    height: 160px;
+  }
+  .footer-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(80%) invert(92%) contrast(89%);
+  }
+  .footer-map-placeholder {
+    width: 100%;
+    height: 160px;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.2);
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .footer-bottom {
+    padding: 2rem 5rem;
+    background: #060606;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.2);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.3); text-decoration: none; }
+  .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    nav.scrolled { padding: 0.7rem 1.5rem; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 7rem 1.8rem 4rem; }
+    .hero-right { height: 55vw; }
+    .hero-scroll-hint { display: none; }
+    #impact { grid-template-columns: 1fr; padding: 5rem 1.8rem; gap: 3rem; }
+    #methodologie { padding: 5rem 1.8rem; }
+    .method-grid { grid-template-columns: 1fr; }
+    .method-step { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .method-band { flex-direction: column; text-align: center; padding: 2rem 1.8rem; }
+    #prestations { padding: 5rem 1.8rem; }
+    .prestations-header { flex-direction: column; gap: 1.5rem; }
+    .services-grid { grid-template-columns: 1fr; gap: 2px; }
+    .service-card { aspect-ratio: 4/3; }
+    #preuves { padding: 5rem 1.8rem; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .preuves-photo-band { grid-template-columns: 1fr; height: auto; }
+    .preuves-photo-band img { height: 50vw; }
+    #about { grid-template-columns: 1fr; padding: 5rem 1.8rem; gap: 3rem; }
+    .about-badge { right: 0; }
+    #faq { grid-template-columns: 1fr; padding: 5rem 1.8rem; gap: 2rem; }
+    .faq-left h2 { position: static; }
+    #final-cta { padding: 6rem 1.8rem; }
+    footer { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.8rem 2.5rem; }
+    .footer-bottom { padding: 1.5rem 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">G <span>Beauty</span></a>
+  <ul class="nav-links">
+    <li><a href="#prestations">Soins</a></li>
+    <li><a href="#preuves">Avis</a></li>
+    <li><a href="#about">L'Institut</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://www.fresha.com/fr/a/g-beauty-geneve-vernier-route-daire-154-w1g2cr50/booking?menu=true&pId=1154758&dppub=true&employeeId=2842358&cartId=f69c90c6-2d6d-4a0b-8ead-6a30380f363f" target="_blank" class="nav-cta">Réserver</a></li>
+  </ul>
+</nav>
+
+<!-- ============ SECTION 1: HERO ============ -->
+<section id="hero">
+  <div class="hero-left">
+    <span class="hero-eyebrow reveal">Institut de beauté — Vernier, Genève</span>
+    <h1 class="hero-h1 reveal reveal-delay-1">
+      Révélez<br><em>votre beauté</em><br>à Genève
+    </h1>
+    <h2 class="hero-h2 reveal reveal-delay-2">
+      Soins experts en épilation laser, lipocavitation, cryolipolysie & bien plus — pour un corps et une peau sublimés, en toute confiance.
+    </h2>
+    <div class="hero-ctas reveal reveal-delay-3">
+      <a href="https://www.fresha.com/fr/a/g-beauty-geneve-vernier-route-daire-154-w1g2cr50/booking?menu=true&pId=1154758&dppub=true&employeeId=2842358&cartId=f69c90c6-2d6d-4a0b-8ead-6a30380f363f" target="_blank" class="btn-primary">Réserver ma séance</a>
+      <a href="#prestations" class="btn-secondary">Découvrir les soins →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=85&fit=crop" alt="Soin visage premium G Beauty Genève" class="img-hero reveal">
+    <div class="hero-right-overlay"></div>
+    <div class="hero-tag">✦ Résultats visibles dès la 1re séance</div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Explorer</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2: IMPACT & DOULEURS ============ -->
+<section id="impact">
+  <div class="impact-left reveal">
+    <h2>Ce que vous<br>méritez <em>vraiment</em></h2>
+    <p>Trop de personnes renoncent à se sentir bien dans leur corps, faute d'un accompagnement expert et personnalisé. G Beauty est là pour changer ça.</p>
+  </div>
+  <div class="impact-right">
+    <div class="pain-point reveal reveal-delay-1">
+      <span class="pain-number">01</span>
+      <div class="pain-content">
+        <h3>Des résultats que vous n'osez plus espérer</h3>
+        <p>Poils persistants, silhouette figée, tatouages regrettés… Ces problèmes ont des solutions concrètes. Nos technologies de pointe offrent des transformations visibles, durables et mesurables.</p>
+      </div>
+    </div>
+    <div class="pain-point reveal reveal-delay-2">
+      <span class="pain-number">02</span>
+      <div class="pain-content">
+        <h3>La peur d'une expérience douloureuse ou bâclée</h3>
+        <p>Chaque séance G Beauty est conçue pour être brève, précise et indolore. Vous repartez avec une transformation, pas avec des regrets.</p>
+      </div>
+    </div>
+    <div class="pain-point reveal reveal-delay-3">
+      <span class="pain-number">03</span>
+      <div class="pain-content">
+        <h3>Se sentir perdue face aux choix de traitements</h3>
+        <p>Un diagnostic personnalisé vous est offert avant toute prestation. Vous savez exactement ce qui vous convient, pourquoi, et comment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3: MÉTHODOLOGIE ============ -->
+<section id="methodologie">
+  <div class="method-header reveal">
+    <span class="section-tag">✦ Notre signature</span>
+    <h2>La Méthode <em>G Beauty</em></h2>
+  </div>
+  <div class="method-grid">
+    <div class="method-step reveal reveal-delay-1">
+      <span class="method-step-num">I</span>
+      <svg class="method-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="22" r="21" stroke="#0a0a0a" stroke-width="1.2"/>
+        <path d="M22 12c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm0 4a3 3 0 110 6 3 3 0 010-6zm0 14.2a7.2 7.2 0 01-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08a7.2 7.2 0 01-6 3.22z" fill="#0a0a0a" fill-opacity="0.8"/>
+      </svg>
+      <h3>Rendez-vous & Diagnostic</h3>
+      <p>Un échange approfondi pour cerner vos attentes, évaluer votre peau et définir le protocole idéal. Aucun soin sans compréhension totale de votre profil.</p>
+    </div>
+    <div class="method-step reveal reveal-delay-2">
+      <span class="method-step-num">II</span>
+      <svg class="method-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="22" r="21" stroke="#0a0a0a" stroke-width="1.2"/>
+        <path d="M14 22h16M22 14v16" stroke="#0a0a0a" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <h3>Soin & Précision Technique</h3>
+      <p>Technologies certifiées, gestes millimétrés, protocoles éprouvés. Chaque détail compte. Chaque mouvement a un sens. Votre confort est notre priorité absolue.</p>
+    </div>
+    <div class="method-step reveal reveal-delay-3">
+      <span class="method-step-num">III</span>
+      <svg class="method-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="22" r="21" stroke="#0a0a0a" stroke-width="1.2"/>
+        <path d="M16 22l4 4 8-8" stroke="#0a0a0a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3>Départ Confiant & Suivi</h3>
+      <p>Conseils post-soin personnalisés, suivi de vos résultats sur le long terme. Vous repartez transformée et armée pour amplifier les bénéfices de votre traitement.</p>
+    </div>
+  </div>
+  <div class="method-band reveal">
+    <p>« Chaque séance est une promesse tenue envers votre corps et votre confiance en vous. »</p>
+    <a href="https://www.fresha.com/fr/a/g-beauty-geneve-vernier-route-daire-154-w1g2cr50/booking?menu=true&pId=1154758&dppub=true&employeeId=2842358&cartId=f69c90c6-2d6d-4a0b-8ead-6a30380f363f" target="_blank" class="btn-primary">Commencer mon bilan</a>
+  </div>
+</section>
+
+<!-- ============ SECTION 4: PRESTATIONS ============ -->
+<section id="prestations">
+  <div class="prestations-header reveal">
+    <div>
+      <span class="section-tag">✦ Nos expertises</span>
+      <h2>Soins<br><em>d'exception</em></h2>
+    </div>
+    <p>Chaque prestation est réalisée avec un équipement de haute précision et une expertise certifiée — pour des résultats qui parlent d'eux-mêmes.</p>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card reveal">
+      <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=85&fit=crop" alt="Soin visage G Beauty Genève" class="img-portfolio">
+      <div class="service-overlay">
+        <span class="service-num">01</span>
+        <span class="service-name">Soin Visage</span>
+        <p class="service-desc">Hydratation profonde, éclat et fermeté — des protocoles sur-mesure adaptés à chaque type de peau pour un teint lumineux et régénéré.</p>
+        <a href="https://www.fresha.com/fr/a/g-beauty-geneve-vernier-route-daire-154-w1g2cr50/booking?menu=true&pId=1154758&dppub=true&employeeId=2842358&cartId=f69c90c6-2d6d-4a0b-8ead-6a30380f363f" target="_blank" class="service-arrow">Réserver →</a>
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
+      <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=85&fit=crop" alt="Épilation laser Genève" class="img-portfolio">
+      <div class="service-overlay">
+        <span class="service-num">02</span>
+        <span class="service-name">Épilation Laser</span>
+        <p class="service-desc">Technologie laser de précision pour une pilosité éliminée durablement — corps, visage, contour de barbe — avec un confort maximal et des résultats définitifs.</p>
+        <a href="https://www.fresha.com/fr/a/g-beauty-geneve-vernier-route-daire-154-w1g2cr50/booking?menu=true&pId=1154758&dppub=true&employeeId=2842358&cartId=f69c90c6-2d6d-4a0b-8ead-6a30380f363f" target="_blank" class="service-arrow">Réserver →</a>
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&q=85&fit=crop" alt="Détatouage laser Genève" class="img-portfolio">
+      <div class="service-overlay">
+        <span class="service-num">03</span>
+        <span class="service-name">Détatouage</span>
+        <p class="service-desc">Effacement progressif et précis grâce au laser Q-switched. Des résultats surprenants dès les premières séances, sans marques résiduelles.</p>
+        <a href="https://www.fresha.com/fr/a/g-beauty-geneve-vernier-route-daire-154-w1g2cr50/booking?menu=true&pId=1154758&dppub=true&employeeId=2842358&cartId=f69c90c6-2d6d-4a0b-8ead-6a30380f363f" target="_blank" class="service-arrow">Réserver →</a>
+      </div>
+    </div>
+
+    <div class="service-card reveal">
+      <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&q=85&fit=crop" alt="Soin cheveux Genève" class="img-portfolio">
+      <div class="service-overlay">
+        <span class="service-num">04</span>
+        <span class="service-name">Soins Cheveux</span>
+        <p class="service-desc">Traitements capillaires régénérants pour une chevelure fortifiée, brillante et pleine de vitalité — du cuir chevelu à la pointe.</p>
+        <a href="https://www.fresha.com/fr/a/g-beauty-geneve-vernier-route-daire-154-w1g2cr50/booking?menu=true&pId=1154758&dppub=true&employeeId=2842358&cartId=f69c90c6-2d6d-4a0b-8ead-6a30380f363f" target="_blank" class="service-arrow">Réserver →</a>
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
+      <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=85&fit=crop" alt="Lipocavitation Genève Vernier" class="img-portfolio">
+      <div class="service-overlay">
+        <span class="service-num">05</span>
+        <span class="service-name">Lipocavitation</span>
+        <p class="service-desc">Ultrasons focalisés pour détruire les cellules graisseuses localisées. Séances brèves, sans douleur, sans éviction — des résultats visibles en quelques séances.</p>
+        <a href="https://www.fresha.com/fr/a/g-beauty-geneve-vernier-route-daire-154-w1g2cr50/booking?menu=true&pId=1154758&dppub=true&employeeId=2842358&cartId=f69c90c6-2d6d-4a0b-8ead-6a30380f363f" target="_blank" class="service-arrow">Réserver →</a>
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=85&fit=crop" alt="Cryolipolysie Carbon Peel Genève" class="img-portfolio">
+      <div class="service-overlay">
+        <span class="service-num">06</span>
+        <span class="service-name">Cryolipolysie & Carbon Peel</span>
+        <p class="service-desc">Cryolipolysie : élimination des graisses par le froid, sans chirurgie. Carbon Peel : peeling au carbone pour un teint purifié, lumineux et rajeuni en une séance.</p>
+        <a href="https://www.fresha.com/fr/a/g-beauty-geneve-vernier-route-daire-154-w1g2cr50/booking?menu=true&pId=1154758&dppub=true&employeeId=2842358&cartId=f69c90c6-2d6d-4a0b-8ead-6a30380f363f" target="_blank" class="service-arrow">Réserver →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SECTION 5+6: PREUVE SOCIALE ============ -->
+<section id="preuves">
+  <div class="preuves-header reveal">
+    <div class="stars">★★★★★</div>
+    <span class="section-tag">✦ Ce que disent nos clientes</span>
+    <h2><em>Chaque séance,</em><br>une expérience d'exception</h2>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <p class="review-text">Très professionnelle, accueillante et rassurante, avec un grand souci du détail. L'épilation laser du contour de ma barbe est réalisée avec beaucoup de précision et les résultats sont vraiment au rendez-vous. On se sent en confiance du début à la fin.</p>
+      <div>
+        <p class="review-author">Client satisfait</p>
+        <p class="review-source">★★★★★ · Avis vérifié</p>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-1">
+      <p class="review-text">Institut décoré avec beaucoup de goût et très agréable. Amaral fait preuve d'un grand professionnalisme et est extrêmement sympathique. Je suis très satisfaite du résultat de mes séances de radiofréquence. Je recommande vivement !</p>
+      <div>
+        <p class="review-author">Cliente radiofréquence</p>
+        <p class="review-source">★★★★★ · Avis vérifié</p>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-2">
+      <p class="review-text">J'ai fait juste deux séances de détatouage et j'ai un résultat super satisfaisant. Je vous recommande fortement ! Les résultats dépassent mes attentes et l'équipe est aux petits soins du début à la fin.</p>
+      <div>
+        <p class="review-author">Cliente détatouage</p>
+        <p class="review-source">★★★★★ · Avis vérifié</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="preuves-photo-band reveal">
+    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1000&q=80&fit=crop" alt="Ambiance G Beauty Genève" class="proof-img img-ambiance">
+    <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80&fit=crop" alt="Résultat soin peau" class="proof-img img-result">
+    <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=600&q=80&fit=crop" alt="Institut de beauté Genève" class="proof-img img-institut">
+  </div>
+</section>
+
+<!-- ============ SECTION 7: ABOUT ============ -->
+<section id="about">
+  <div class="about-image-wrap reveal">
+    <img src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=900&q=85&fit=crop" alt="Expertise G Beauty Genève" class="img-about">
+    <div class="about-badge">
+      <strong>5★</strong>
+      <span>Satisfaction<br>garantie</span>
+    </div>
+  </div>
+  <div class="about-content">
+    <span class="section-tag reveal">✦ L'Institut</span>
+    <h2 class="reveal reveal-delay-1">Une vision.<br><em>Un engagement.</em><br>Une passion.</h2>
+    <p class="reveal reveal-delay-2">G Beauty Genève est né d'une conviction profonde : chaque personne mérite un accompagnement beauté à la hauteur de ses aspirations. Situé au cœur de Vernier, notre institut conjugue expertise technique, technologies de pointe et chaleur humaine authentique.</p>
+    <p class="reveal reveal-delay-2">Amaral et son équipe se forment en continu aux dernières innovations esthétiques pour vous offrir toujours mieux — que ce soit en épilation laser, en remodelage corporel ou en soins du visage.</p>
+    <div class="about-serment reveal reveal-delay-3">
+      <p>« Mon serment : que chaque cliente reparte en se sentant plus belle, plus confiante et pleinement satisfaite. »</p>
+    </div>
+    <div class="about-stats reveal reveal-delay-3">
+      <div class="stat">
+        <strong>500+</strong>
+        <span>Clientes fidèles</span>
+      </div>
+      <div class="stat">
+        <strong>6</strong>
+        <span>Expertises</span>
+      </div>
+      <div class="stat">
+        <strong>5★</strong>
+        <span>Note Google</span>
+      </div>
+    </div>
+    <a href="https://www.instagram.com/g_beauty_geneve/" target="_blank" class="about-ig reveal reveal-delay-4">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Découvrir l'univers G Beauty
+    </a>
+  </div>
+</section>
+
+<!-- ============ SECTION 8: FAQ ============ -->
+<section id="faq">
+  <div class="faq-left">
+    <span class="section-tag reveal">✦ Vos questions</span>
+    <h2 class="reveal reveal-delay-1">Tout ce<br>que vous<br><em>voulez<br>savoir</em></h2>
+  </div>
+  <div class="faq-list reveal reveal-delay-1">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>L'épilation laser est-elle douloureuse ?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a"><p>Notre laser de dernière génération est conçu pour minimiser l'inconfort. La majorité de nos clients décrivent la sensation comme une légère piqûre ou un claquement doux. Des gels rafraîchissants et des réglages adaptés à votre sensibilité garantissent un maximum de confort.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>Combien de séances de lipocavitation faut-il ?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a"><p>En général, entre 6 et 10 séances sont recommandées pour des résultats optimaux, avec des séances hebdomadaires d'environ 30 à 60 minutes. Chaque corps est unique — votre protocole sera défini lors de votre bilan personnalisé.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>La cryolipolysie est-elle sans danger ?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a"><p>Absolument. La cryolipolysie est une technique non invasive, cliniquement validée, qui cible exclusivement les cellules graisseuses sans altérer les tissus environnants. Aucune anesthésie ni récupération n'est nécessaire.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>En combien de séances mon tatouage peut-il être effacé ?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a"><p>Cela dépend de la taille, des couleurs et de l'ancienneté du tatouage. En moyenne, entre 4 et 10 séances sont nécessaires pour un effacement complet. Des résultats significatifs sont souvent visibles dès les 2 premières séances, comme en témoignent nos clientes.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>Le Carbon Peel convient-il à tous les types de peau ?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a"><p>Oui ! Le Carbon Peel est une technique douce et adaptée à tous les phototypes. Il est particulièrement efficace pour purifier les pores, unifier le teint, réduire l'acné et redonner de l'éclat. Une consultation préalable est néanmoins toujours recommandée.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>Puis-je enchaîner plusieurs types de soins lors d'une visite ?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a"><p>Dans de nombreux cas, oui. Certaines associations de soins sont même recommandées pour amplifier les résultats (ex. : lipocavitation + drainage lymphatique). Nous vous conseillons lors de votre bilan sur les combinaisons optimales selon vos objectifs.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>Comment prendre rendez-vous à G Beauty Genève ?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a"><p>Vous pouvez réserver directement en ligne 24h/24 via notre plateforme Fresha (lien ci-dessous), ou nous appeler directement au +41 78 983 91 44. Nous répondons également aux messages Instagram.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>Acceptez-vous les paiements en plusieurs fois ?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a"><p>Nous proposons des forfaits séances à tarifs avantageux pour les cures complètes. Contactez-nous directement pour discuter des options de paiement adaptées à votre projet beauté.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SECTION 9: FINAL CTA ============ -->
+<section id="final-cta">
+  <div class="cta-bg-text">Beauty</div>
+  <span class="section-tag reveal">✦ Commencez votre transformation</span>
+  <h2 class="reveal reveal-delay-1">Votre beauté<br><em>n'attend plus</em></h2>
+  <p class="reveal reveal-delay-2">Réservez votre séance dès maintenant et rejoignez les centaines de clientes qui font confiance à G Beauty Genève pour révéler leur meilleure version.</p>
+  <div class="cta-group reveal reveal-delay-3">
+    <a href="https://www.fresha.com/fr/a/g-beauty-geneve-vernier-route-daire-154-w1g2cr50/booking?menu=true&pId=1154758&dppub=true&employeeId=2842358&cartId=f69c90c6-2d6d-4a0b-8ead-6a30380f363f" target="_blank" class="btn-white">Réserver ma séance →</a>
+    <a href="https://www.instagram.com/g_beauty_geneve/" target="_blank" class="btn-outline-white">Découvrir sur Instagram</a>
+  </div>
+  <p class="cta-phone reveal reveal-delay-4">Ou appelez-nous directement : <a href="tel:+41789839144">+41 78 983 91 44</a></p>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-brand">
+    <a href="#hero" class="nav-logo">G <span>Beauty</span></a>
+    <p>Institut de beauté haut de gamme à Vernier, Genève. Spécialiste en épilation laser, lipocavitation, cryolipolysie, soins visage et détatouage.</p>
+    <address>
+      Rte d'Aïre 154<br>
+      1219 Vernier, Genève<br>
+      <a href="tel:+41789839144" style="color:rgba(255,255,255,0.45);text-decoration:none;">+41 78 983 91 44</a>
+    </address>
+  </div>
+  <div>
+    <h4>Prestations</h4>
+    <ul>
+      <li><a href="#prestations">Soin Visage</a></li>
+      <li><a href="#prestations">Épilation Laser</a></li>
+      <li><a href="#prestations">Détatouage</a></li>
+      <li><a href="#prestations">Soins Cheveux</a></li>
+      <li><a href="#prestations">Lipocavitation</a></li>
+      <li><a href="#prestations">Cryolipolysie</a></li>
+      <li><a href="#prestations">Carbon Peel</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="#methodologie">Notre méthode</a></li>
+      <li><a href="#preuves">Avis clients</a></li>
+      <li><a href="#about">L'Institut</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://www.instagram.com/g_beauty_geneve/" target="_blank">Instagram</a></li>
+      <li><a href="https://www.fresha.com/fr/a/g-beauty-geneve-vernier-route-daire-154-w1g2cr50/booking?menu=true&pId=1154758&dppub=true&employeeId=2842358&cartId=f69c90c6-2d6d-4a0b-8ead-6a30380f363f" target="_blank">Réserver en ligne</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Nous trouver</h4>
+    <div class="footer-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.9!2d6.1!3d46.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zRzogQmVhdXR5IEdlbsOodmU!5e0!3m2!1sfr!2sch!4v1"
+        allowfullscreen=""
+        loading="lazy"
+        title="G Beauty Genève sur la carte"
+      ></iframe>
+    </div>
+    <p style="font-size:0.7rem;margin-top:0.8rem;line-height:1.6;">
+      <a href="https://maps.google.com/?q=Route+d'Aïre+154+1219+Vernier" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none;">Voir sur Google Maps →</a>
+    </p>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2025 G Beauty Genève. Tous droits réservés.</span>
+  <span>
+    <a href="#">Mentions légales</a> &nbsp;·&nbsp;
+    <a href="#">Politique de confidentialité</a> &nbsp;·&nbsp;
+    Institut de beauté Vernier · Épilation laser Genève · Soin corps Genève
+  </span>
+</div>
+
+<script>
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // FAQ
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
